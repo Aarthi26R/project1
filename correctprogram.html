@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arsha - Bootstrap Template</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <style>
+      /* Fix the Hero Section */
+      body {
+        background-color: rgb(229, 238, 245);
+      }
+
+      .hero-section {
+        background: url("https://bootstrapmade.com/demo/templates/Arsha/assets/img/hero-bg.jpg")
+          no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-color: #26487b;
+      }
+      /* Left Side Text Alignment */
+      .hero-content {
+        text-align: left;
+      }
+      /* Right Side Image Styling */
+      .hero-image {
+        max-width: 100%;
+        animation: floatUpDown 3s ease-in-out infinite alternate;
+      }
+      /* Smooth Up and Down Animation */
+      @keyframes floatUpDown {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-20px);
+        }
+      }
+      .container-box {
+        background-color: white; /* Ensures contrast */
+        padding: 20px; /* Adds spacing */
+        border-radius: 10px; /* Optional styling */
+      }
+      h2 {
+        color: rgb(11, 11, 97); /* Change to desired color */
+      }
+      feature-section {
+        padding: 60px 0;
+      }
+
+      .feature-heading {
+        font-size: 36px;
+        font-weight: 700;
+        color: #2c3e50;
+      }
+
+      .feature-heading span {
+        color: #0d6efd;
+      }
+
+      .feature-text {
+        font-size: 16px;
+        color: #6c757d;
+        margin-bottom: 30px;
+      }
+
+      .feature-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease-in-out;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+
+      .feature-box:hover {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-box .top-content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .feature-box .number {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0d6efd;
+        margin-right: 15px;
+      }
+
+      .feature-box .text {
+        flex-grow: 1;
+        font-size: 18px;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .feature-box .icon {
+        font-size: 20px;
+        color: #6c757d;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Rotate the icon when expanded */
+      .feature-box[aria-expanded="true"] .icon {
+        transform: rotate(90deg);
+      }
+
+      /* Collapse transition effect */
+      .collapse {
+        transition: height 0.5s ease-in-out;
+      }
+
+      /* Image transition effect */
+      .feature-image img {
+        width: 80%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      /* Increase image size when any item expands */
+      .feature-box[aria-expanded="true"] ~ .feature-image img {
+        transform: scale(1.1);
+      }
+      .progress-bar {
+        background-color: #163e5e !important; /* Steel Blue */
+      }
+      .container-box {
+        background-color: white;
+        padding: 20px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+      .image-container img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      section-title {
+        font-weight: bold;
+        color: #1a2940; /* Dark Blue */
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: #4ea5f5; /* Light Blue */
+        margin: 5px auto;
+      }
+      .service-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+      .service-card i {
+        font-size: 2rem;
+        color: #4ea5f5; /* Light Blue */
+        margin-bottom: 15px;
+      }
+      .service-card h5 {
+        font-weight: bold;
+        color: #1a2940; /* Dark Blue */
+      }
+      .service-card p {
+        color: #6c757d; /* Gray */
+      }
+      .cta-section {
+        position: relative;
+        padding: 100px 0;
+        color: white;
+        text-align: center;
+      }
+      /* Background image */
+      .cta-bg {
+        position: relative;
+        background: url("https://bootstrapmade.com/content/demo/Arsha/assets/img/bg/bg-8.webp")
+          center/cover no-repeat;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      /* Overlay for better readability */
+      .cta-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      /* Content inside the image */
+      .cta-content {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+      }
+      .cta-title {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .cta-btn {
+        border: 2px solid white;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1rem;
+        background: transparent;
+        transition: all 0.3s ease;
+      }
+      .cta-btn:hover {
+        background: white;
+        color: black;
+      }
+      .portfolio-section {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .portfolio-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .portfolio-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 8px auto;
+      }
+      .portfolio-filters {
+        margin: 20px 0;
+      }
+      .portfolio-filters .btn {
+        border-radius: 20px;
+        padding: 8px 20px;
+        transition: 0.3s;
+      }
+      .portfolio-filters .btn.active {
+        background-color: #0d6efd;
+        color: white;
+      }
+      .portfolio-item img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .team-section {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .team-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+        position: relative;
+      }
+      .team-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 8px auto;
+      }
+      .team-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+        cursor: pointer;
+        position: relative;
+      }
+      .team-card:hover {
+        transform: translateY(-5px);
+      }
+      .team-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+      .team-card h4 {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .team-card p {
+        color: #6c757d;
+      }
+      .social-icons a {
+        color: #6c757d;
+        font-size: 18px;
+        margin: 0 5px;
+        transition: 0.3s;
+      }
+      .social-icons a:hover {
+        color: #0d6efd;
+      }
+
+      /* Highlight Effect using CSS */
+      .team-card:focus-within {
+        border: 3px solid #0d6efd;
+        box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+      }
+      .pricing-section {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .pricing-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .pricing-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 8px auto;
+      }
+      .pricing-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .pricing-card:hover {
+        transform: translateY(-5px);
+      }
+      .pricing-highlight {
+        border: 3px solid #0d6efd;
+        padding: 40px;
+      }
+      .price {
+        font-size: 36px;
+        font-weight: bold;
+        color: #0d6efd;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+      }
+      .feature-list li {
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      .text-muted {
+        text-decoration: line-through;
+        color: #999;
+      }
+      .btn-outline-primary {
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-weight: bold;
+      }
+      .btn-primary {
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-weight: bold;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+      .pricing-section {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .pricing-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .pricing-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 8px auto;
+      }
+      .pricing-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .pricing-highlight {
+        border: 3px solid #0d6efd;
+        padding: 40px;
+      }
+      .price {
+        font-size: 36px;
+        font-weight: bold;
+        color: #0d6efd;
+      }
+      .btn-outline-primary,
+      .btn-primary {
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-weight: bold;
+      }
+      .team-section {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .team-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+        position: relative;
+      }
+      .team-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 8px auto;
+      }
+      .team-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+        cursor: pointer;
+        position: relative;
+      }
+      .team-card:hover {
+        transform: translateY(-5px);
+      }
+      .team-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+      .team-card h4 {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .team-card p {
+        color: #6c757d;
+      }
+      .social-icons a {
+        color: #6c757d;
+        font-size: 18px;
+        margin: 0 5px;
+        transition: 0.3s;
+      }
+      .social-icons a:hover {
+        color: #0d6efd;
+      }
+
+      /* Highlight Effect using CSS */
+      .team-card:focus-within {
+        border: 3px solid #0d6efd;
+        box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+      }
+      .pricing-section {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .pricing-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .pricing-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 8px auto;
+      }
+      .pricing-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .pricing-card:hover {
+        transform: translateY(-5px);
+      }
+      .pricing-highlight {
+        border: 3px solid #0d6efd;
+        padding: 40px;
+      }
+      .price {
+        font-size: 36px;
+        font-weight: bold;
+        color: #0d6efd;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+      }
+      .feature-list li {
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      .text-muted {
+        text-decoration: line-through;
+        color: #999;
+      }
+      .btn-outline-primary {
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-weight: bold;
+      }
+      .btn-primary {
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-weight: bold;
+      }
+      .testimonial-section {
+        padding: 50px 0;
+      }
+      .testimonial-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .testimonial-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 8px auto;
+      }
+      .swiper {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .swiper-slide {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .testimonial-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+      .testimonial-name {
+        font-weight: bold;
+        font-size: 20px;
+        color: #093a6a;
+      }
+      .testimonial-role {
+        color: gray;
+        font-size: 14px;
+      }
+      .testimonial-text {
+        font-style: italic;
+        color: #555;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+      .testimonial-rating {
+        color: #ffd700;
+        font-size: 18px;
+      }
+      frequent body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+      .faq-section {
+        text-align: center;
+        padding: 60px 20px;
+      }
+      .faq-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2c3e50;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .faq-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background-color: #0d6efd;
+        display: block;
+        margin: 10px auto;
+      }
+      .faq-description {
+        color: #6c757d;
+        font-size: 16px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+      .accordion-item {
+        border: none;
+        background: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .accordion-button {
+        font-weight: bold;
+        color: #2c3e50;
+        background: white;
+        border-radius: 10px;
+        box-shadow: none;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+      }
+      .accordion-button::after {
+        content: "\f285";
+        font-family: "Bootstrap-icons";
+        font-size: 18px;
+        transition: transform 0.3s ease-in-out;
+        margin-left: auto;
+      }
+      .accordion-button:not(.collapsed)::after {
+        transform: rotate(90deg);
+      }
+      .accordion-body {
+        color: #555;
+        font-size: 15px;
+        padding: 15px;
+      }
+      .subscribe-section {
+        background: #f8f9fa;
+        padding: 50px;
+        border-radius: 15px;
+        text-align: left;
+      }
+      .subscribe-section h2 {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .subscribe-section p {
+        color: #6c757d;
+        font-size: 16px;
+      }
+      .form-control {
+        border-radius: 30px 0 0 30px;
+        padding: 15px;
+      }
+      .btn-subscribe {
+        border-radius: 0 30px 30px 0;
+        background-color: #4da8f0;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+      }
+      .btn-subscribe:hover {
+        background-color: #3690d8;
+      }
+      .subscribe-img {
+        max-width: 100%;
+        height: auto;
+      }
+      .blog-section {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .blog-section h2 {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .blog-section p {
+        color: #6c757d;
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+      .blog-card {
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        border: none;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .blog-card img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .blog-content {
+        padding: 20px;
+        text-align: left;
+      }
+      .blog-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .blog-meta {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 10px;
+      }
+      .date-badge {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .read-more {
+        font-size: 14px;
+        color: #007bff;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+      }
+      .read-more:hover {
+        text-decoration: underline;
+      }
+      .contact-section {
+        padding: 60px 0;
+        text-align: center;
+      }
+      .contact-section h2 {
+        font-weight: bold;
+        color: #2c3e50;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+      .contact-section h2::after {
+        content: "";
+        width: 50px;
+        height: 3px;
+        background-color: #007bff;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .contact-section p {
+        color: #6c757d;
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+      .contact-card {
+        padding: 30px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #007bff;
+        height: 610px;
+        border-bottom: 4px solid #007bff;
+      }
+      .contact-card h5 {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .contact-info i {
+        font-size: 24px;
+        color: #007bff;
+        margin-right: 10px;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        padding: 10px;
+        width: 100%;
+      }
+      .contact-form button {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 30px;
+        width: 100%;
+        font-weight: bold;
+      }
+      .contact-form button:hover {
+        background-color: #2980b9;
+      }
+      .newsletter {
+        background-color: #f8f9fa;
+        text-align: center;
+        padding: 50px 20px;
+      }
+      .newsletter h2 {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      .newsletter p {
+        color: #6c757d;
+        margin-bottom: 30px;
+      }
+      .newsletter .input-group {
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 30px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      .newsletter .form-control {
+        border-radius: 30px;
+        border: none;
+        padding: 15px;
+      }
+      .newsletter .btn {
+        background-color: #3498db;
+        color: white;
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-weight: bold;
+        border: none;
+      }
+      .newsletter .btn:hover {
+        background-color: #2980b9;
+      }
+
+      /* Footer Section */
+      .footer {
+        background: white;
+        padding: 50px 0;
+        text-align: left;
+      }
+      .footer h5 {
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+      .footer p {
+        color: #6c757d;
+        margin-bottom: 10px;
+      }
+      .footer a {
+        text-decoration: none;
+        color: #6c757d;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .footer a:hover {
+        color: #3498db;
+      }
+      .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-color: #f8f9fa;
+        color: #2c3e50;
+        transition: 0.3s;
+      }
+      .social-icons a:hover {
+        background-color: #3498db;
+        color: white;
+      }
+
+      /* Copyright Section */
+      .copyright {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 14px;
+        color: #6c757d;
+      }
+      .copyright strong {
+        color: #2c3e50;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">ARSHA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="Aboutus.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus1.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="#">Get Started</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side: Text Content -->
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <div class="hero-content">
+              <h1>Better Solutions For Your Business</h1>
+              <p>
+                We are a team of talented designers making websites with
+                Bootstrap.
+              </p>
+              <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+          </div>
+          <!-- Right Side: Animated Image -->
+          <div class="col-md-6 text-center">
+            <img
+              src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/hero-img.png"
+              alt="Business Solutions"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container-box">
+      <!-- Single Heading -->
+      <h2 class="text-center mb-4">ABOUTUS</h2>
+
+      <div class="row">
+        <!-- First Column (Feature A) -->
+        <div class="col-md-6 p-3">
+          <ul>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <ul class="custom-list">
+              <i class="bi bi-check-circle-fill"></i>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+              <i class="bi bi-check-circle-fill"></i>
+              Duis aute irure dolor in reprehenderit in voluptate velit.<br />
+              <i class="bi bi-check-circle-fill"></i>
+              Ullamco laboris nisi ut aliquip ex ea commodo.<br />
+            </ul>
+          </ul>
+        </div>
+
+        <!-- Second Column (Feature B with Button) -->
+        <div class="col-md-6 p-3">
+          <ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore
+              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.
+            </p>
+          </ul>
+          <!-- Button added below Feature B -->
+          <div class="text-center mt-3">
+            <button class="btn btn-primary">Read More-></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container feature-section">
+      <div class="row align-items-center">
+        <!-- Left Section -->
+        <div class="col-md-6">
+          <h2 class="feature-heading">
+            Eum ipsam laborum deleniti
+            <span>velit pariatur architecto aut nihil</span>
+          </h2>
+          <p class="feature-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
+            aute irure dolor in reprehenderit.
+          </p>
+
+          <!-- Feature Boxes -->
+          <div
+            class="feature-box"
+            data-bs-toggle="collapse"
+            data-bs-target="#feature1"
+            aria-expanded="false"
+          >
+            <div class="top-content">
+              <span class="number">01</span>
+              <span class="text"
+                >Non consectetur a erat nam at lectus urna duis?</span
+              >
+              <i class="bi bi-chevron-right icon"></i>
+            </div>
+          </div>
+          <div id="feature1" class="collapse">
+            <p class="p-3 border-start border-primary">
+              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
+              volutpat lacus laoreet non curabitur gravida. Venenatis lectus
+              magna fringilla urna porttitor rhoncus dolor purus non.
+            </p>
+          </div>
+
+          <div
+            class="feature-box"
+            data-bs-toggle="collapse"
+            data-bs-target="#feature2"
+            aria-expanded="false"
+          >
+            <div class="top-content">
+              <span class="number">02</span>
+              <span class="text"
+                >Feugiat scelerisque varius morbi enim nunc faucibus a
+                pellentesque?</span
+              >
+              <i class="bi bi-chevron-right icon"></i>
+            </div>
+          </div>
+          <div id="feature2" class="collapse">
+            <p class="p-3 border-start border-primary">
+              Dolor sit amet consectetur adipiscing elit pellentesque habitant
+              morbi. Id interdum velit laoreet id donec ultrices. Fringilla
+              phasellus faucibus scelerisque eleifend donec pretium. Est
+              pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+              cursus turpis massa tincidunt dui.
+            </p>
+          </div>
+
+          <div
+            class="feature-box"
+            data-bs-toggle="collapse"
+            data-bs-target="#feature3"
+            aria-expanded="false"
+          >
+            <div class="top-content">
+              <span class="number">03</span>
+              <span class="text"
+                >Dolor sit amet consectetur adipiscing elit pellentesque?</span
+              >
+              <i class="bi bi-chevron-right icon"></i>
+            </div>
+          </div>
+          <div id="feature3" class="collapse">
+            <p class="p-3 border-start border-primary">
+              Eleifend mi in nulla posuere sollicitudin aliquam ultrices
+              sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla
+              pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
+              eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
+              molestie at elementum eu facilisis sed odio morbi quis
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Section (Image) -->
+        <div class="col-md-6 text-center feature-image">
+          <img src="css/why-us.png" alt="Feature Image" />
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row align-items-center">
+        <!-- Left side image -->
+        <div class="col-md-4 text-center image-container">
+          <img src="css/illustration-10.webp" alt="200px" class="img-fluid" />
+        </div>
+
+        <!-- Right side progress bars -->
+        <div class="col-md-8">
+          <h1>HTML</h1>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 100%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              100%
+            </div>
+          </div>
+          <br />
+
+          <h1>CSS</h1>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 90%"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              90%
+            </div>
+          </div>
+          <br />
+
+          <h1>JAVASCRIPT</h1>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 75%"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              75%
+            </div>
+          </div>
+          <br />
+
+          <h1>PHOTOSHOP</h1>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 55%"
+              aria-valuenow="55"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              55%
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="container text-center mt-5">
+      <h2 class="section-title">Services</h2>
+      <p class="text-muted">
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="service-card">
+            <i class="bi bi-heart-pulse"></i>
+            <h5>Lorem Ipsum</h5>
+            <p>
+              Voluptatum deleniti atque corrupti quos dolores et quas molestias
+              excepturi.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="service-card">
+            <i class="bi bi-bounding-box"></i>
+            <h5>Sed ut perspici</h5>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="service-card">
+            <i class="bi bi-calendar-event"></i>
+            <h5>Magni Dolores</h5>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="service-card">
+            <i class="bi bi-wifi"></i>
+            <h5>Nemo Enim</h5>
+            <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center mt-4">
+      <h2 class="fw-bold text-dark-blue">Our Process to Success</h2>
+      <p class="text-muted">
+        We follow a structured approach to ensure efficiency and excellence in
+        every step.
+      </p>
+    </div>
+
+    <div class="container mt-4">
+      <div class="card-group">
+        <div class="card p-1 border-0">
+          <img
+            src="css/steps-1.webp"
+            class="card-img-top"
+            alt=""
+            height="360px"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-dark-blue">Research & Analysis</h5>
+            <p class="card-text">
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur magni dolores eos qui ratione.
+            </p>
+            <ul class="list-unstyled">
+              <li>
+                <i class="bi bi-check-lg text-success"></i> Market Research
+              </li>
+              <li><i class="bi bi-check-lg text-success"></i> Data Analysis</li>
+              <li><i class="bi bi-check-lg text-success"></i> User Feedback</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card p-1 border-0">
+          <img
+            src="css/steps-2.webp"
+            class="card-img-top"
+            alt=""
+            height="360px"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-dark-blue">Design & Planning</h5>
+            <p class="card-text">
+              Ut enim ad minima veniam, quis nostrum exercitationem ullam
+              corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+              consequatur.
+            </p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-lg text-success"></i> Wireframing</li>
+              <li><i class="bi bi-check-lg text-success"></i> UI/UX Design</li>
+              <li><i class="bi bi-check-lg text-success"></i> Prototyping</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card p-1 border-0">
+          <img
+            src="css/steps-3.webp"
+            class="card-img-top"
+            alt=""
+            height="360px"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-dark-blue">Development & Launch</h5>
+            <p class="card-text">
+              Et harum quidem rerum facilis est et expedita distinctio. Nam
+              libero tempore, cum soluta nobis est eligendi optio cumque nihil.
+            </p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-lg text-success"></i> Development</li>
+              <li><i class="bi bi-check-lg text-success"></i> Testing</li>
+              <li><i class="bi bi-check-lg text-success"></i> Deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid cta-section">
+      <div class="cta-bg">
+        <div class="cta-content">
+          <h2 class="cta-title">Call To Action</h2>
+          <p>
+            Date sure runs dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, kunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+          </p>
+          <button class="cta-btn rounded-pill">Call To Action</button>
+        </div>
+      </div>
+    </div>
+    <div class="container portfolio-section">
+      <h2 class="portfolio-title">PORTFOLIO</h2>
+      <p>
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+
+      <!-- Filter Buttons -->
+      <div class="portfolio-filters">
+        <button class="btn active">All</button>
+        <button class="btn btn-outline-dark">App</button>
+        <button class="btn btn-outline-dark">Card</button>
+        <button class="btn btn-outline-dark">Web</button>
+      </div>
+
+      <div class="row">
+        <!-- First Column (2 images) -->
+        <div class="col-md-4">
+          <div class="portfolio-item">
+            <img src="css/portfolio-portrait-1.webp" alt="Portfolio 1" />
+          </div>
+          <div class="portfolio-item mt-3">
+            <img src="css/portfolio-portrait-3.webp" alt="Portfolio 4" />
+          </div>
+        </div>
+
+        <!-- Second Column (4 images) -->
+        <div class="col-md-4">
+          <div class="portfolio-item">
+            <img src="css/portfolio-1.webp" alt="Portfolio 2" />
+          </div>
+          <div class="portfolio-item mt-3">
+            <img src="css/portfolio-4.webp" alt="Portfolio 5" />
+          </div>
+          <div class="portfolio-item mt-3">
+            <img src="css/portfolio-7.webp" alt="Portfolio 3" />
+          </div>
+          <div class="portfolio-item mt-3">
+            <img src="css/portfolio-9.webp" alt="Portfolio 6" />
+          </div>
+        </div>
+
+        <!-- Third Column (3 images) -->
+        <div class="col-md-4">
+          <div class="portfolio-item">
+            <img src="css/portfolio-3.webp" alt="Portfolio 7" />
+          </div>
+          <div class="portfolio-item mt-3">
+            <img src="css/portfolio-portrait-2.webp" alt="Portfolio 8" />
+          </div>
+          <div class="portfolio-item mt-3">
+            <img src="css/portfolio-8.webp" alt="Portfolio 9" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container team-section">
+      <h2 class="team-title">TEAM</h2>
+      <p>
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+
+      <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-md-6 col-lg-6 mb-4">
+          <div class="team-card text-center" tabindex="0">
+            <img src="css/person-m-7.webp" alt="Walter White" />
+            <h4>Walter White</h4>
+            <p><strong>Chief Executive Officer</strong></p>
+            <p>Explicabo voluptatem mollitia et repellat qui dolor.</p>
+            <div class="social-icons">
+              <a href="#" tabindex="0"><i class="bi bi-x"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-facebook"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-instagram"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-md-6 col-lg-6 mb-4">
+          <div class="team-card text-center" tabindex="0">
+            <img src="css/person-f-8.webp" alt="Sarah Johnson" />
+            <h4>Sarah Johnson</h4>
+            <p><strong>Product Manager</strong></p>
+            <p>Aut maiores voluptates amet et quis praesentium.</p>
+            <div class="social-icons">
+              <a href="#" tabindex="0"><i class="bi bi-x"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-facebook"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-instagram"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-md-6 col-lg-6 mb-4">
+          <div class="team-card text-center" tabindex="0">
+            <img src="css/person-m-6.webp" alt="William Anderson" />
+            <h4>William Anderson</h4>
+            <p><strong>CTO</strong></p>
+            <p>Quisquam facilis cum velit laborum corrupti.</p>
+            <div class="social-icons">
+              <a href="#" tabindex="0"><i class="bi bi-x"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-facebook"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-instagram"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="col-md-6 col-lg-6 mb-4">
+          <div class="team-card text-center" tabindex="0">
+            <img src="css/person-f-4.webp" alt="Amanda Jepson" />
+            <h4>Amanda Jepson</h4>
+            <p><strong>Accountant</strong></p>
+            <p>Dolorum tempora officiis odit laborum.</p>
+            <div class="social-icons">
+              <a href="#" tabindex="0"><i class="bi bi-x"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-facebook"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-instagram"></i></a>
+              <a href="#" tabindex="0"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pricing-section">
+      <h2 class="pricing-title">PRICING</h2>
+      <p>
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+
+      <div class="row mt-4">
+        <!-- Free Plan -->
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4 class="fw-bold">Free Plan</h4>
+            <p class="price">$0 <span class="text-muted fs-5">/ month</span></p>
+            <ul>
+              <li>✔ Quam adipiscing vitae proin</li>
+              <li>✔ Nec feugiat nisl pretium</li>
+              <li>✔ Nulla at volutpat diam uteera</li>
+              <li class="text-muted">✖ Pharetra massa massa ultricies</li>
+            </ul>
+            <a href="home.html" class="btn btn-outline-primary">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Business Plan (Highlighted) -->
+        <div class="col-md-4">
+          <div class="pricing-card pricing-highlight">
+            <h4 class="fw-bold">Business Plan</h4>
+            <p class="price">
+              $29 <span class="text-muted fs-5">/ month</span>
+            </p>
+            <ul>
+              <li>✔ Quam adipiscing vitae proin</li>
+              <li>✔ Nec feugiat nisl pretium</li>
+              <li>✔ Nulla at volutpat diam uteera</li>
+              <li>✔ Pharetra massa massa ultricies</li>
+            </ul>
+            <a href="home.html" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Developer Plan -->
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4 class="fw-bold">Developer Plan</h4>
+            <p class="price">
+              $49 <span class="text-muted fs-5">/ month</span>
+            </p>
+            <ul>
+              <li>✔ Quam adipiscing vitae proin</li>
+              <li>✔ Nec feugiat nisl pretium</li>
+              <li>✔ Nulla at volutpat diam uteera</li>
+              <li>✔ Pharetra massa massa ultricies</li>
+            </ul>
+            <a href="home.html" class="btn btn-outline-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container pricing-section">
+      <h2 class="pricing-title">PRICING</h2>
+      <p>
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+
+      <div class="row mt-4">
+        <!-- Free Plan -->
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4 class="fw-bold">Free Plan</h4>
+            <p class="price">$0 <span class="text-muted fs-5">/ month</span></p>
+            <ul class="feature-list">
+              <li>✔ Quam adipiscing vitae proin</li>
+              <li>✔ Nec feugiat nisl pretium</li>
+              <li>✔ Nulla at volutpat diam uteera</li>
+              <li class="text-muted">✖ Pharetra massa massa ultricies</li>
+              <li class="text-muted">✖ Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <button class="btn btn-outline-primary">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Business Plan (Highlighted) -->
+        <div class="col-md-4">
+          <div class="pricing-card pricing-highlight">
+            <h4 class="fw-bold">Business Plan</h4>
+            <p class="price">
+              $29 <span class="text-muted fs-5">/ month</span>
+            </p>
+            <ul class="feature-list">
+              <li>✔ Quam adipiscing vitae proin</li>
+              <li>✔ Nec feugiat nisl pretium</li>
+              <li>✔ Nulla at volutpat diam uteera</li>
+              <li>✔ Pharetra massa massa ultricies</li>
+              <li>✔ Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Developer Plan -->
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h4 class="fw-bold">Developer Plan</h4>
+            <p class="price">
+              $49 <span class="text-muted fs-5">/ month</span>
+            </p>
+            <ul class="feature-list">
+              <li>✔ Quam adipiscing vitae proin</li>
+              <li>✔ Nec feugiat nisl pretium</li>
+              <li>✔ Nulla at volutpat diam uteera</li>
+              <li>✔ Pharetra massa massa ultricies</li>
+              <li>✔ Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <button class="btn btn-outline-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container testimonial-section">
+      <h2 class="testimonial-title">TESTIMONIALS</h2>
+      <p>
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+
+      <!-- Swiper Slider -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-9.webp"
+              alt="Person Image"
+              class="testimonial-img"
+            />
+            <h4 class="testimonial-name">Saul Goodman</h4>
+            <p class="testimonial-role">CEO & Founder</p>
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "Proin iaculis purus consequat sem cure digni ssim donec
+              porttitora entum suscipit rhoncus."
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-5.webp"
+              alt="Person Image"
+              class="testimonial-img"
+            />
+            <h4 class="testimonial-name">Lisa Smith</h4>
+            <p class="testimonial-role">Marketing Manager</p>
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-12.webp"
+              alt="Person Image"
+              class="testimonial-img"
+            />
+            <h4 class="testimonial-name">John Doe</h4>
+            <p class="testimonial-role">Software Engineer</p>
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "Integer commodo faucibus nisl, ac egestas augue fermentum id."
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-12.webp"
+              alt="Person Image"
+              class="testimonial-img"
+            />
+            <h4 class="testimonial-name">Emma Johnson</h4>
+            <p class="testimonial-role">UI/UX Designer</p>
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "Curabitur vel ultricies elit. Nulla facilisi."
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-13.webp"
+              alt="Person Image"
+              class="testimonial-img"
+            />
+            <h4 class="testimonial-name">Michael Brown</h4>
+            <p class="testimonial-role">Product Manager</p>
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "Sed quis justo sed nisi facilisis placerat."
+            </p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="container faq-section">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <p class="faq-description">
+        Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+        aliquid fuga eum quidem.
+      </p>
+
+      <div class="accordion" id="faqAccordion">
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq1"
+            >
+              <i class="bi bi-question-circle me-2 text-primary"></i> Non
+              consectetur a erat nam at lectus urna duis?
+            </button>
+          </h2>
+          <div
+            id="faq1"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq2"
+            >
+              <i class="bi bi-question-circle me-2 text-primary"></i> Feugiat
+              scelerisque varius morbi enim nunc faucibus a pellentesque?
+            </button>
+          </h2>
+          <div
+            id="faq2"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora
+              entum suscipit rhoncus.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq3"
+            >
+              <i class="bi bi-question-circle me-2 text-primary"></i> Dolor sit
+              amet consectetur adipiscing elit pellentesque?
+            </button>
+          </h2>
+          <div
+            id="faq3"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum
+              velit euismod.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq4"
+            >
+              <i class="bi bi-question-circle me-2 text-primary"></i> Ac odio
+              tempor orci dapibus. Aliquam eleifend mi in nulla?
+            </button>
+          </h2>
+          <div
+            id="faq4"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Tincidunt ornare massa eget egestas purus viverra accumsan in nisl
+              nisi scelerisque.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq5"
+            >
+              <i class="bi bi-question-circle me-2 text-primary"></i> Tempus
+              quam pellentesque nec nam aliquam sem et tortor consequat?
+            </button>
+          </h2>
+          <div
+            id="faq5"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Integer feugiat scelerisque varius morbi enim nunc faucibus a
+              pellentesque.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <div class="row align-items-center subscribe-section shadow">
+        <!-- Left Side: Text & Form -->
+        <div class="col-lg-6 col-md-12 text-center text-lg-start">
+          <h2>Subscribe to our newsletter</h2>
+          <p>
+            Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt
+            nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit.
+          </p>
+          <form class="d-flex mt-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email address..."
+              required
+            />
+            <button type="submit" class="btn btn-subscribe">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="col-lg-6 col-md-12 text-center">
+          <img
+            src="https://bootstrapmade.com/content/demo/Arsha/assets/img/cta/cta-1.webp"
+            alt="Subscribe"
+            class="subscribe-img"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container blog-section">
+      <h2>RECENT BLOG POSTS</h2>
+      <p>
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+
+      <div class="row">
+        <!-- Blog Post 1 -->
+        <div class="col-md-4">
+          <div class="card blog-card position-relative shadow">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/blog/blog-post-1.webp"
+              alt="Blog 1"
+            /><span class="date-badge">DECEMBER 12</span>
+            <div class="blog-content">
+              <h5 class="blog-title">
+                Eum ad dolor et. Autem aut fugiat debitis
+              </h5>
+              <p class="blog-meta">👤 Julia Parker / 📖 Politics</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-4">
+          <div class="card blog-card position-relative shadow">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/blog/blog-post-2.webp"
+              alt="Blog 2"
+            />
+            <div class="blog-content">
+              <h5 class="blog-title">
+                Et repellendus molestiae qui est sed omnis
+              </h5>
+              <p class="blog-meta">👤 Mario Douglas / 🏆 Sports</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+            <span class="date-badge bg-primary">JULY 17</span>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-4">
+          <div class="card blog-card position-relative shadow">
+            <img
+              src="https://bootstrapmade.com/content/demo/Arsha/assets/img/blog/blog-post-3.webp"
+              alt="Blog 3"
+            />
+            <div class="blog-content">
+              <h5 class="blog-title">
+                Quia assumenda est et veritati firana ploder
+              </h5>
+              <p class="blog-meta">👤 Lisa Hunter / 📖 Economics</p>
+              <a href="blog-details.html" class="readmore stretched-link"
+                >Read More →</a
+              >
+            </div>
+            <span class="date-badge bg-info">SEPTEMBER 05</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container contact-section">
+      <h2>CONTACT</h2>
+      <p>
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-md-5">
+          <div class="contact-card text-start">
+            <div class="contact-info d-flex align-items-center mb-3">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h5>Address</h5>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+            </div>
+
+            <div class="contact-info d-flex align-items-center mb-3">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h5>Call Us</h5>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div>
+
+            <div class="contact-info d-flex align-items-center mb-3">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h5>Email Us</h5>
+                <p>info@example.com</p>
+              </div>
+            </div>
+
+            <!-- Google Map Embed -->
+            <div class="mt-3">
+              <iframe
+                src="https://maps.google.com/maps?q=New+York+City&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="200"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-7">
+          <div class="contact-card">
+            <form class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Your Name</label>
+                  <input type="text" class="form-control mb-3" required />
+                </div>
+                <div class="col-md-6">
+                  <label>Your Email</label>
+                  <input type="email" class="form-control mb-3" required />
+                </div>
+              </div>
+
+              <label>Subject</label>
+              <input type="text" class="form-control mb-3" required />
+
+              <label>Message</label>
+              <textarea rows="4" class="form-control mb-3" required></textarea>
+
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="newsletter">
+      <h2>Join Our Newsletter</h2>
+      <p>
+        Subscribe to our newsletter and receive the latest news about our
+        products and services!
+      </p>
+      <div class="input-group">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter your email"
+        />
+        <button class="btn">Subscribe</button>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-md-4">
+          <h5>ARSHA</h5>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p><strong>Phone:</strong> +1 5589 55488 55</p>
+          <p><strong>Email:</strong> info@example.com</p>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-md-2">
+          <h5>Useful Links</h5>
+          <a href="#">> Home</a>
+          <a href="#">> About us</a>
+          <a href="#">> Services</a>
+          <a href="#">> Terms of service</a>
+        </div>
+
+        <!-- Our Services -->
+        <div class="col-md-3">
+          <h5>Our Services</h5>
+          <a href="#">> Web Design</a>
+          <a href="#">> Web Development</a>
+          <a href="#">> Product Management</a>
+          <a href="#">> Marketing</a>
+        </div>
+
+        <!-- Social Media -->
+        <div class="col-md-3">
+          <h5>Follow Us</h5>
+          <p>
+            Cras fermentum odio eu feugiat lide par naso tierra videa magna
+            derita valies
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="copyright">
+      &copy; Copyright <strong>Arsha</strong> All Rights Reserved
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
